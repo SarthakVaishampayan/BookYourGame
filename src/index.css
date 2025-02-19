@@ -1,0 +1,10 @@
+
+body{
+    background-image:url(./assets/3.jpg);
+    background-size:cover;
+    color: white;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
