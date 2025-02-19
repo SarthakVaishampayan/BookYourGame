@@ -15,20 +15,26 @@ const LogoutPage = () => {
 
   return (
     <>
-      <Navbar />
-      <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
+     
+      <div className="flex flex-col items-center justify-center min-h-screen  text-white">
+        <div className='relative left-1/4 top-2/4  text-center '>
+
         <h1 className="text-4xl font-bold mb-8">You have been logged out</h1>
+        </div>
+        <div className='relative left-1/4' >
+
         <button
           onClick={handleLoginClick}
-          className="bg-purple-600 hover:bg-purple-700 p-2 rounded"
-        >
+          className="bg-purple-600 h-12 w-20 hover:bg-purple-700 p-2 rounded-2xl text-xl"
+          >
           Login
         </button>
+          </div>
 
         {showLoginDialog && (
           <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
             <div className="bg-white p-6 rounded-lg shadow-lg text-black">
-              
+
               <h2 className="text-2xl font-semibold mb-4">Login</h2>
               <form className="space-y-4">
                 <div>
