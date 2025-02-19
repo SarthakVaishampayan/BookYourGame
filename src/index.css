@@ -1,7 +1,9 @@
 
 body{
     background-image:url(./assets/3.jpg);
-    background-size:cover;
+    background-size: cover;
+    background-attachment: fixed; /* Keeps the background still */
+    background-position: center;
     color: white;
 }
 
