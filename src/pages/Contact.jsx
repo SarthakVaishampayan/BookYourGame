@@ -19,7 +19,7 @@ export default function ContactPage() {
 
 
 
-          <div className="bg-black w-2/3 bg-opacity-50 backdrop-blur-sm border border-white p-6 rounded-lg">
+          <div className="bg-black w-2/3 bg-opacity-50 justify-self-end backdrop-blur-sm border border-white p-6 rounded-lg">
             <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2>
             <form className="space-y-4">
               <div>
