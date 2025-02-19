@@ -26,7 +26,7 @@ function App() {
 
   return (
     <div className="bg-gradient-to-br flex items-center absolute right-72 top-2/4 justify-center">
-      <Link to="/contact">
+      <Link to="/booknow">
       <button
         onClick={handleClick}
         className={`

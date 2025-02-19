@@ -5,6 +5,7 @@ import Profile from "./pages/Profile";
 import Bookings from "./pages/Bookings";
 import Contact from "./pages/Contact";
 import Logout from "./pages/Logout";
+import Booknow from "./pages/Booknow";
 
 import {Route,Routes  } from "react-router-dom";
 
@@ -21,7 +22,8 @@ const App = () => {
         <Route path='/home' element={<Home/>}/>
         <Route path='/profile' element={<Profile/>} /> 
         <Route path='/bookings' element={<Bookings/>} /> 
-        <Route path='/contact' element={<Contact/>} />        
+        <Route path='/contact' element={<Contact/>} /> 
+        <Route path='/booknow' element={<Booknow/>} />       
         <Route path='/logout' element={<Logout/>} />        
       </Routes>
       
