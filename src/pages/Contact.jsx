@@ -2,12 +2,39 @@
 
 
 import React from "react";
-import { Gamepad2, Mail, Phone, MapPin, Facebook, Twitter, Instagram, FacebookIcon } from "lucide-react";
+import { Gamepad2, Mail, Phone, MapPin, Facebook, Twitter, Instagram, FacebookIcon,Github  } from "lucide-react";
 import Navbar from "../components/Navbar";
 
 export default function ContactPage() {
+  const [result, setResult] = React.useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "d2d52fd3-a355-410c-959d-27fdccdb0b86");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+  };
+
   return (
     <>
+
+
     <Navbar/>
     <div className=" bg-gradient-to-b  text-white">
      
@@ -21,20 +48,20 @@ export default function ContactPage() {
 
           <div className="bg-black w-2/3 bg-opacity-50 justify-self-end backdrop-blur-sm border border-white p-6 rounded-lg">
             <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2>
-            <form className="space-y-4">
+            <form onSubmit={onSubmit} className="space-y-4">
               <div>
                 <label htmlFor="name" className="block mb-1">Name</label>
-                <input type="text" id="name" placeholder="Your name" className="w-full p-2 text-white bg-white border bg-opacity-35 rounded"/>
+                <input type="text" name="name" id="name" placeholder="Your name" className="w-full p-2 text-white bg-white border bg-opacity-35 rounded" required/>
               </div>
               <div>
                 <label htmlFor="email" className="block mb-1">Email</label>
-                <input type="email" id="email" placeholder="Your email" className="w-full p-2 bg-white  bg-opacity-35 rounded"/>
+                <input type="email" name="email" id="email" placeholder="Your email" className="w-full p-2 bg-white  bg-opacity-35 rounded" required/>
               </div>
               <div>
                 <label htmlFor="message" className="block mb-1">Message</label>
-                <textarea id="message" placeholder="Your message" className="w-full p-2 bg-white  bg-opacity-35  rounded" rows={4} />
+                <textarea name="message" id="message" placeholder="Your message" className="w-full p-2 bg-white  bg-opacity-35  rounded" rows={4} required />
               </div>
-              <button className="w-full bg-white bg-opacity-50 hover:bg-purple-700 p-2 rounded">Send Message</button>
+              <button type="submit" className="w-full bg-white bg-opacity-50 hover:bg-purple-700 p-2 rounded">Send Message</button>
             </form>
           </div>
 
@@ -62,13 +89,13 @@ export default function ContactPage() {
             <div className="bg-black w-2/3 bg-opacity-50 border backdrop-blur-sm border-gray-700 p-6 rounded-lg">
               <h2 className="text-2xl font-semibold mb-4">Connect With Us</h2>
               <div className="flex space-x-4">
-                <a href="#" className="text-white  opacity-50 hover:text-purple-400 hover:scale-125 hover:opacity-80">
+                <a href="https://www.facebook.com/sarthak.vaishampayan/" className="text-white  opacity-50 hover:text-purple-400 hover:scale-125 hover:opacity-80">
                   <FacebookIcon className="w-8 h-8" />
                 </a>
-                <a href="#" className="text-white  opacity-50 hover:text-purple-400 hover:scale-125 hover:opacity-80">
-                  <Twitter className="w-8 h-8" />
+                <a href="https://github.com/SarthakVaishampayan" className="text-white  opacity-50 hover:text-purple-400 hover:scale-125 hover:opacity-80">
+                  <Github className="w-8 h-8" />
                 </a>
-                <a href="#" className="text-white opacity-50 hover:text-purple-400 hover:scale-125 hover:opacity-80">
+                <a href="https://www.instagram.com/_sxrthxkk_/" className="text-white opacity-50 hover:text-purple-400 hover:scale-125 hover:opacity-80">
                   <Instagram className="w-8 h-8" />
                 </a>
               </div>

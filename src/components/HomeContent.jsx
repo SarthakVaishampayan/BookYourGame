@@ -31,7 +31,7 @@ function App() {
         onClick={handleClick}
         className={`
           group relative flex items-center gap-2 px-8 py-4
-          bg-gradient-to-r from-yellow-500 to-purple-600 bg-opacity-10
+          bg-gradient-to-r from-green-400 to-blue-500 bg-opacity-10
           text-white font-semibold rounded-lg
           transform transition-all duration-200
           hover:scale-105 hover:shadow-lg
