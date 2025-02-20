@@ -34,7 +34,7 @@ const Navbar = () => {
   return (
     <nav className="w-full h-20 p-2 text-color relative">
       <div className="h-full text-xl text-center items-center justify-between flex text-white m-2 ml-2 rounded-3xl opacity-70">
-        <span className="ml-10 text-3xl text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">
+        <span className="ml-10 text-3xl text-white">
           <Link to='/'>BookYourGame</Link>
         </span>
 

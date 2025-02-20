@@ -25,13 +25,17 @@ function App() {
   };
 
   return (
-    <div className="bg-gradient-to-br flex items-center absolute right-72 top-2/4 justify-center">
-      <Link to="/booknow">
+    <div className="bg-gradient-to-br flex-col items-center absolute right-60 top-1/3 justify-center">
+
+      <div className='text-7xl text-center font-sans mb-10 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-pink-500'>
+        Your Game <br/> Your Time
+      </div>
+      <Link className="flex justify-center" to="/booknow">
       <button
         onClick={handleClick}
         className={`
           group relative flex items-center gap-2 px-8 py-4
-          bg-gradient-to-r from-green-400 to-blue-500 bg-opacity-10
+          bg-gradient-to-r from-green-400 to-blue-500 bg-opacity-10 
           text-white font-semibold rounded-lg
           transform transition-all duration-200
           hover:scale-105 hover:shadow-lg
